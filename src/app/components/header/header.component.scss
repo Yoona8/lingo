@@ -1,0 +1,174 @@
+.header {
+  padding: 14px 0;
+  color: #ffffff;
+  background-color: #4ab3e4;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  max-width: 1385px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.main-nav {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 45px;
+  height: 45px;
+  margin-right: 20px;
+  color: #ffffff;
+}
+
+.logo-pic {
+  width: 45px;
+  height: 45px;
+}
+
+.language {
+  color: #ffffff;
+  text-decoration: none;
+
+  &:hover {
+    color: #feed7d;
+  }
+}
+
+.main-menu {
+  display: flex;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.main-menu li {
+  margin-right: 33px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.main-menu a {
+  position: relative;
+  display: block;
+  padding-top: 36px;
+  color: #e6f6ff;
+  text-decoration: none;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: #feed7d;
+
+    .menu-icon {
+      fill: #feed7d;
+    }
+  }
+}
+
+.menu-icon {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  fill: #e6f6ff;
+
+  &--lessons {
+    width: 28px;
+    height: 28px;
+    top: 3px;
+  }
+
+  &--teachers {
+    width: 36px;
+    height: 36px;
+  }
+
+  &--classes {
+    width: 30px;
+    height: 30px;
+    top: 3px;
+  }
+
+  &--game {
+    width: 35px;
+    height: 20px;
+    top: 6px;
+  }
+}
+
+.user-navigation {
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
+}
+
+.user-avatar {
+  width: 50px;
+  height: 50px;
+  margin-right: 13px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.user-options {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.user-item {
+  margin-bottom: 9px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.user-link {
+  position: relative;
+  display: block;
+  padding-left: 22px;
+  color: #ffffff;
+  text-decoration: none;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    margin-top: -8px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &--notifications::before {
+    background-image: url('../../../assets/images/i-bell.svg');
+    background-size: 16px 16px;
+  }
+
+  &--messages::before {
+    background-image: url('../../../assets/images/i-message.svg');
+    background-size: 14px 14px;
+  }
+}
+
+.user-badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 19px;
+  height: 19px;
+  font-size: 11px;
+  line-height: 1;
+  border-radius: 50%;
+  background-color: #f34848;
+}
