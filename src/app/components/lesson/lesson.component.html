@@ -1,0 +1,74 @@
+<section class="lesson">
+  <header class="lesson-header">
+    <div class="author">
+      <a class="author-image" href="#">
+        <img
+          width="40" height="40"
+          [src]="'../assets/images/' + lesson.authorPic"
+          [alt]="lesson.author">
+      </a>
+      <p class="author-info">
+        <a class="author-name" href="#" lang="en">{{ lesson.author }}</a>
+        <time class="date" [dateTime]="lesson.date" lang="en">
+          3 days ago
+        </time>
+      </p>
+    </div>
+    <ul class="options">
+      <li>
+        <a class="option option--bookmark" href="#">
+          <svg class="option-icon" width="20" height="24">
+            <use xlink:href="../assets/images/sprite.svg#i-bookmark"></use>
+          </svg>
+          <span class="visually-hidden">В закладки</span>
+        </a>
+      </li>
+      <li>
+        <a class="option option--menu" href="#">
+          <span class="visually-hidden">Меню</span>
+        </a>
+      </li>
+    </ul>
+  </header>
+  <div class="introduction">
+    <p class="lesson-pic">
+      <img [src]="'../assets/images/' + lesson.pic" [alt]="lesson.title">
+    </p>
+    <p>Модуль</p>
+    <h1>{{ lesson.title }}</h1>
+    <p lang="en">{{ lesson.titleEn }}</p>
+    <p lang="en">{{ lesson.level }}</p>
+  </div>
+  <nav class="lesson-navigation">
+    <ul class="tabs">
+      <li><a href="#">Об уроке</a></li>
+      <li><a href="#">Содержание</a></li>
+      <li><a href="#">Упражнения</a></li>
+      <li><a href="#">Выполнение урока</a></li>
+    </ul>
+  </nav>
+  <div class="progress-bar"></div>
+  <form class="lesson-card">
+    <h2 lang="en">{{ lesson.tasks[0].question }}</h2>
+    <ul class="pictures">
+      <li *ngFor="let option of lesson.tasks[0].options">
+        <label>
+          <input name="answer" type="radio">
+          <img [src]="option[1]" [alt]="option[0]">
+        </label>
+      </li>
+    </ul>
+    <button type="submit">Проверить</button>
+  </form>
+  <form class="lesson-card">
+    <h2 lang="en">
+      {{ lesson.tasks[1].question }}
+    </h2>
+    <ul class="pictures">
+      <li *ngFor="let option of lesson.tasks[1].options">
+        {{ option }}
+      </li>
+    </ul>
+    <button type="submit">Проверить</button>
+  </form>
+</section>
