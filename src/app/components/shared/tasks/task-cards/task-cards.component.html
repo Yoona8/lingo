@@ -1,0 +1,17 @@
+<form class="card" (submit)="onTaskSubmit($event)">
+  <h2 class="title" lang="en">{{ task.question }}</h2>
+  <ul class="pictures">
+    <li class="picture" *ngFor="let option of task.options; index as i">
+      <input
+        class="option visually-hidden"
+        [id]="'option-' + i"
+        name="option"
+        [value]="option[0]"
+        type="radio">
+      <label class="option-image" [attr.for]="'option-' + i">
+        <img [src]="'../assets/images/' + option[1]" [alt]="option[0]">
+      </label>
+    </li>
+  </ul>
+  <button class="button" type="submit">Проверить</button>
+</form>

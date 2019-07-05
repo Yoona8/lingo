@@ -22,13 +22,13 @@ export class LessonService {
       [],
       [
         new Task(
-          'card',
+          'cards',
           'apple',
           [
-            ['манго', '#'],
-            ['яблоко', '#'],
-            ['ананас', '#'],
-            ['банан', '#']
+            ['манго', 'card-pic4.png'],
+            ['яблоко', 'card-pic1.png'],
+            ['ананас', 'card-pic2.png'],
+            ['банан', 'card-pic3.png']
           ],
           'яблоко'
         ),
