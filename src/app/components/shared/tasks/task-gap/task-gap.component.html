@@ -1,0 +1,16 @@
+<form class="card" (submit)="onTaskSubmit($event)">
+  <h2 class="title">Заполните пропуск</h2>
+  <p class="question" lang="en" [innerHTML]="question"></p>
+  <ul class="options">
+    <li class="option-item" *ngFor="let option of task.options; index as i">
+      <input
+        class="option visually-hidden"
+        [id]="'option-' + i"
+        [value]="option"
+        name="option"
+        type="radio">
+      <label class="option-text" [attr.for]="'option-' + i">{{ option }}</label>
+    </li>
+  </ul>
+  <button class="button" type="submit">Проверить</button>
+</form>

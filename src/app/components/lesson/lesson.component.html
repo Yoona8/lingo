@@ -57,18 +57,7 @@
     </span>
   </div>
   <div class="task">
-    <app-task-cards [task]="lesson.tasks[0]"></app-task-cards>
+    <!--<app-task-cards [task]="lesson.tasks[0]"></app-task-cards>-->
+    <app-task-gap [task]="lesson.tasks[1]"></app-task-gap>
   </div>
-  <form class="lesson-card">
-    <h2>Заполните пропуск</h2>
-    <p lang="en">
-      {{ lesson.tasks[1].question }}
-    </p>
-    <ul class="pictures">
-      <li *ngFor="let option of lesson.tasks[1].options">
-        {{ option }}
-      </li>
-    </ul>
-    <button class="button" type="submit">Проверить</button>
-  </form>
 </section>

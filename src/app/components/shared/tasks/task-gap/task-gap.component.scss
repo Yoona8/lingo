@@ -1,0 +1,60 @@
+.card {
+  width: 290px;
+  text-align: center;
+  color: #343434;
+}
+
+.title {
+  margin: 0 0 20px;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.question {
+  margin: 0 0 23px;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 1.2;
+  text-transform: initial;
+}
+
+.options {
+  margin: 0 0 120px;
+  padding: 0;
+  color: #4b4b4b;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 21px;
+  text-transform: capitalize;
+  list-style: none;
+}
+
+.option-item {
+  display: block;
+  width: 100%;
+  margin-bottom: 11px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.option-text {
+  display: block;
+  padding: 10px 20px;
+  border: 1px solid #e8e8e8;
+  border-radius: 15px;
+  box-shadow: 0 2px 0 #e8e8e8;
+}
+
+.option:checked ~ .option-text {
+  border: 1px solid #5ab3e4;
+  background-color: #ddf3fe;
+  box-shadow: 0 2px 0 #5ab3e4;
+}
+
+.button {
+  display: block;
+  width: 100%;
+}
