@@ -91,3 +91,50 @@
     }
   }
 }
+
+.introduction {
+  display: flex;
+  margin-bottom: 14px;
+}
+
+.lesson-pic {
+  flex-shrink: 0;
+  width: 190px;
+  height: 190px;
+  margin: 0 20px 0 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.lesson-description {
+  flex-grow: 1;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.lesson-type {
+  margin: 0 0 10px 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.2;
+  color: #5ab3e4;
+}
+
+.title {
+  margin: 0 0 10px 0;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.1;
+}
+
+.title-eng {
+  margin: 0 0 12px 0;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.level {
+  margin: 0;
+  color: #999999;
+}

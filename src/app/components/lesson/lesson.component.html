@@ -34,10 +34,14 @@
     <p class="lesson-pic">
       <img [src]="'../assets/images/' + lesson.pic" [alt]="lesson.title">
     </p>
-    <p>Модуль</p>
-    <h1>{{ lesson.title }}</h1>
-    <p lang="en">{{ lesson.titleEn }}</p>
-    <p lang="en">{{ lesson.level }}</p>
+    <div class="lesson-description">
+      <div class="description-inner">
+        <p class="lesson-type">Модуль</p>
+        <h1 class="title">{{ lesson.title }}</h1>
+        <p class="title-eng" lang="en">{{ lesson.titleEn }}</p>
+        <p class="level" lang="en">{{ lesson.level }}</p>
+      </div>
+    </div>
   </div>
   <nav class="lesson-navigation">
     <ul class="tabs">
