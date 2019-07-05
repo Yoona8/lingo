@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LessonComponent } from './components/lesson/lesson.component';
 import { LessonService } from './services/lesson.service';
+import { ButtonComponent } from './components/shared/button/button.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    LessonComponent
+    LessonComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule
