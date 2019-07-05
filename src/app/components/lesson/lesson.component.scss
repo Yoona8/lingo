@@ -138,3 +138,49 @@
   margin: 0;
   color: #999999;
 }
+
+.lesson-navigation {
+  margin-bottom: 20px;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tabs li {
+  margin: 0 17px;
+  color: #999999;
+}
+
+.tab {
+  display: block;
+  padding: 11px 0;
+  color: #999999;
+  text-decoration: none;
+
+  &[href]:hover,
+  &[href]:active,
+  &[href]:focus {
+    color: #5ab3e4;
+  }
+
+  &:not([href]) {
+    position: relative;
+    color: #5ab3e4;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: #5ab3e4;
+    }
+  }
+}
