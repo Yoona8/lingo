@@ -1,6 +1,12 @@
 .main {
   max-width: 1335px;
   margin: 0 auto;
-  padding: 0 45px;
-  background-color: #eeeeee;
+  background-color: #ffffff;
+}
+
+@media (min-width: 980px) {
+  .main {
+    padding: 0 45px;
+    background-color: #eeeeee;
+  }
 }

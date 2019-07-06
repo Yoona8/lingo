@@ -1,8 +1,9 @@
 .lesson {
-  max-width: 720px;
-  padding: 50px 75px 112px;
+  width: 720px;
+  margin: 0 auto;
+  padding: 50px 55px 112px;
   background-color: #ffffff;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25) inset;
+  //box-shadow: 0 0 4px rgba(0, 0, 0, 0.25) inset;
 }
 
 .lesson-header {
@@ -221,4 +222,13 @@
 .task {
   width: 290px;
   margin: 0 auto;
+}
+
+@media (min-width: 980px) {
+  .lesson {
+    margin: 0;
+    padding-left: 75px;
+    padding-right: 75px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.25) inset;
+  }
 }
