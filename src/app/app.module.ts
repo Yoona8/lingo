@@ -8,6 +8,7 @@ import { LessonService } from './services/lesson.service';
 import { TaskCardsComponent } from './components/shared/tasks/task-cards/task-cards.component';
 import { ButtonComponent } from './components/shared/button/button.component';
 import { TaskGapComponent } from './components/shared/tasks/task-gap/task-gap.component';
+import { ResultComponent } from './components/shared/result/result.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { TaskGapComponent } from './components/shared/tasks/task-gap/task-gap.co
     LessonComponent,
     TaskCardsComponent,
     ButtonComponent,
-    TaskGapComponent
+    TaskGapComponent,
+    ResultComponent
   ],
   imports: [
     BrowserModule
