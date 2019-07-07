@@ -1,0 +1,83 @@
+.result {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 23px 17px 24px;
+  color: #6ba530;
+  background-color: #c4f097;
+  border-radius: 0 0 10px 10px;
+
+  &--incorrect {
+    color: #ec2b2e;
+    background-color: #ffc1c2;
+  }
+}
+
+.text {
+  position: relative;
+  width: 105px;
+  margin-left: 10px;
+  padding-left: 64px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.2;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 54px;
+    height: 54px;
+    margin-top: -27px;
+    background-color: #ffffff;
+    background-image: url('../../../../assets/images/i-check.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 0 0 5px #97ba39 inset;
+    border-radius: 50%;
+  }
+}
+
+.result--incorrect .text {
+  &::before {
+    background-image: url('../../../../assets/images/i-cross.svg');
+    box-shadow: 0 0 0 5px #ec2b2e inset;
+  }
+}
+
+.button {
+  width: 290px;
+  margin: 0 20px;
+  flex-shrink: 0;
+}
+
+.report {
+  position: relative;
+  width: 159px;
+  padding-left: 20px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.2;
+  color: #6ba530;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.result--incorrect .report {
+  color: #ec2b2e;
+}
+
+.report-icon {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 14px;
+  height: 16px;
+  margin-top: -8px;
+  fill: #6ba530;
+}
+
+.result--incorrect .report-icon {
+  fill: #ec2b2e;
+}

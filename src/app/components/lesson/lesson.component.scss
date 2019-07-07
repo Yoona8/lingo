@@ -3,7 +3,6 @@
   margin: 0 auto;
   padding: 50px 55px 112px;
   background-color: #ffffff;
-  //box-shadow: 0 0 4px rgba(0, 0, 0, 0.25) inset;
 }
 
 .lesson-header {
@@ -219,9 +218,26 @@
   }
 }
 
+.task-wrapper {
+  min-height: 450px;
+}
+
 .task {
   width: 290px;
   margin: 0 auto;
+}
+
+.complete {
+  max-width: 660px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.complete-text {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.2;
+  text-align: center;
 }
 
 @media (min-width: 980px) {
