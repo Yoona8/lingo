@@ -12,6 +12,7 @@ import { Task } from '../../models/task.model';
 export class LessonComponent implements OnInit {
   private _lesson: Lesson;
   private _state: {
+    isLoaded: boolean,
     currentTaskIndex: number,
     tasksCompleted: number,
     tasksTotal: number,
@@ -23,15 +24,19 @@ export class LessonComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.lessonService.init();
-    this._lesson = this.lessonService.lesson;
-
     this._state = {
+      isLoaded: false,
       currentTaskIndex: 0,
       tasksCompleted: 0,
-      tasksTotal: this._lesson.tasks.length,
+      tasksTotal: 0,
       isTasksCompleted: false
     };
+
+    this.lessonService.fetchLesson().subscribe((lesson: Lesson) => {
+      this._lesson = Object.assign({}, lesson);
+      this._state.isLoaded = true;
+      this._state.tasksTotal = this._lesson.tasks.length;
+    });
   }
 
   public get lesson(): Lesson {

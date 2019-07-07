@@ -1,0 +1,34 @@
+{
+  "lesson": {
+    "title": "Время настоящее, часть 1",
+    "titleEn": "Present simple, vol. 1",
+    "pic": "lesson-pic1.jpg",
+    "author": "Anna Dormun",
+    "authorPic": "anna-dormun-pic.jpg",
+    "date": "2019-07-05",
+    "level": "Beginners",
+    "description": "",
+    "content": "",
+    "exercises": [],
+    "tasks": [{
+      "type": "cards",
+      "question": "apple",
+      "options": [
+        [ "манго", "card-pic4.png" ],
+        [ "яблоко", "card-pic1.png" ],
+        [ "ананас", "card-pic2.png" ],
+        [ "банан", "card-pic3.png" ]
+      ],
+      "answer": "яблоко"
+    }, {
+      "type": "gap",
+      "question": "__ she a girl?",
+      "options": [
+        [ "Are" ],
+        [ "Am" ],
+        [ "Is" ]
+      ],
+      "answer": "Is she a girl?"
+    }]
+  }
+}

@@ -14,18 +14,18 @@ export class TaskGapComponent implements OnInit, OnChanges {
   private _answer: string;
 
   ngOnInit(): void {
-    this.fillQuestion('');
+    this.fillQuestion();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.fillQuestion('');
+    this.fillQuestion();
   }
 
   public get question() {
     return this._question;
   }
 
-  private fillQuestion(value: any = '') {
+  private fillQuestion(value = '') {
     this._question = this.task.question.replace(
       '__', '<span class="gap">' + value + '</span>'
     );
