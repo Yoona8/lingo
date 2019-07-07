@@ -52,12 +52,27 @@
     </ul>
   </nav>
   <div class="progress-bar">
-    <span class="progress-indicator">
-      <span class="visually-hidden">Выполнено уроков 1 из 10</span>
+    <span class="progress-indicator" [ngStyle]="{ width: progress }">
+      <span class="visually-hidden">Выполнено заданий {{ state.tasksCompleted }} из {{ state.tasksTotal }}</span>
     </span>
   </div>
-  <div class="task">
-    <!--<app-task-cards [task]="lesson.tasks[0]"></app-task-cards>-->
-    <app-task-gap [task]="lesson.tasks[1]"></app-task-gap>
+  <div class="task-wrapper">
+    <div class="task" *ngIf="task" [ngSwitch]="task.type">
+      <app-task-cards
+        *ngSwitchCase="'cards'"
+        [task]="task"
+        (answerSubmitted)="onAnswerSubmitted($event)"></app-task-cards>
+      <app-task-gap
+        *ngSwitchCase="'gap'"
+        [task]="task"
+        (answerSubmitted)="onAnswerSubmitted($event)"></app-task-gap>
+    </div>
+    <div class="complete" *ngIf="state.isTasksCompleted">
+      <p class="complete-text">Congratulations! You've finished all the tasks!</p>
+    </div>
+    <app-result *ngIf="!state.isTasksCompleted && task.isCompleted"
+                (nextButtonClicked)="onNextButtonClick()"
+                [resultText]="task.isCorrect ? 'Верно' : 'Неверно'"
+                [isCorrect]="task.isCorrect"></app-result>
   </div>
 </section>
