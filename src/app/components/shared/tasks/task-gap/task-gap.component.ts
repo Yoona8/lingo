@@ -11,6 +11,7 @@ export class TaskGapComponent implements OnInit, OnChanges {
   @Input() task: Task;
   @Output() answerSubmitted = new EventEmitter<any>();
   private _question: string;
+  private _answer: string;
 
   ngOnInit(): void {
     this.fillQuestion('');
@@ -24,18 +25,22 @@ export class TaskGapComponent implements OnInit, OnChanges {
     return this._question;
   }
 
-  public fillQuestion(value: any = '') {
+  private fillQuestion(value: any = '') {
     this._question = this.task.question.replace(
       '__', '<span class="gap">' + value + '</span>'
     );
   }
 
+  public onOptionChange(evt) {
+    this._answer = evt.target.value;
+  }
+
   public onTaskSubmit(evt) {
     evt.preventDefault();
 
-    const taskData = new FormData(evt.target);
-    const answer = this.task.question.replace('__', taskData.get('option').toString());
+    const answer = this.task.question.replace('__', this._answer);
 
+    this.fillQuestion(this._answer);
     this.answerSubmitted.emit(answer.toLowerCase() === this.task.answer.toLowerCase());
     this.task.isCompleted = true;
   }

@@ -9,7 +9,7 @@
       <input
         class="option visually-hidden"
         [id]="'option-' + i"
-        (change)="fillQuestion(option)"
+        (change)="onOptionChange($event)"
         [value]="option[0]"
         name="option"
         type="radio"

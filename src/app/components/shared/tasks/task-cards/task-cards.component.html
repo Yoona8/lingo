@@ -11,6 +11,7 @@
         name="option"
         [value]="option[0]"
         type="radio"
+        (change)="onOptionChange($event)"
         [disabled]="task.isCompleted"
         required>
       <label class="option-image" [attr.for]="'option-' + i">

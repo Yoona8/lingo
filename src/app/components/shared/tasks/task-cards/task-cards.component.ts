@@ -10,13 +10,16 @@ import { Task } from '../../../../models/task.model';
 export class TaskCardsComponent {
   @Input() task: Task;
   @Output() answerSubmitted = new EventEmitter<any>();
+  private _answer: string;
+
+  public onOptionChange(evt) {
+    this._answer = evt.target.value;
+  }
 
   public onTaskSubmit(evt) {
     evt.preventDefault();
 
-    const answer = new FormData(evt.target).get('option');
-
-    this.answerSubmitted.emit(answer === this.task.answer);
+    this.answerSubmitted.emit(this._answer === this.task.answer);
     this.task.isCompleted = true;
   }
 }
