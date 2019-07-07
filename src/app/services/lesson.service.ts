@@ -36,9 +36,9 @@ export class LessonService {
           'gap',
           '__ she a girl?',
           [
-            'Are',
-            'Am',
-            'Is'
+            ['Are'],
+            ['Am'],
+            ['Is']
           ],
           'Is she a girl?'
         )

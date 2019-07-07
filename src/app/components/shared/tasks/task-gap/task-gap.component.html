@@ -1,4 +1,7 @@
-<form class="card" (submit)="onTaskSubmit($event)">
+<form
+  class="card"
+  [ngClass]="{ 'card--completed': task.isCompleted }"
+  (submit)="onTaskSubmit($event)">
   <h2 class="title">Заполните пропуск</h2>
   <p class="question" lang="en" [innerHTML]="question"></p>
   <ul class="options">
@@ -6,11 +9,14 @@
       <input
         class="option visually-hidden"
         [id]="'option-' + i"
-        [value]="option"
+        (change)="fillQuestion(option)"
+        [value]="option[0]"
         name="option"
-        type="radio">
+        type="radio"
+        [disabled]="task.isCompleted"
+        required>
       <label class="option-text" [attr.for]="'option-' + i">{{ option }}</label>
     </li>
   </ul>
-  <button class="button" type="submit">Проверить</button>
+  <button *ngIf="!task.isCompleted" class="button" type="submit">Проверить</button>
 </form>

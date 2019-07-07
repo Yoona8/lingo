@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Task } from '../../../../models/task.model';
 
 @Component({
@@ -9,9 +9,14 @@ import { Task } from '../../../../models/task.model';
 
 export class TaskCardsComponent {
   @Input() task: Task;
+  @Output() answerSubmitted = new EventEmitter<any>();
 
   public onTaskSubmit(evt) {
     evt.preventDefault();
-    console.log(new FormData(evt.target).get('option') === this.task.answer);
+
+    const answer = new FormData(evt.target).get('option');
+
+    this.answerSubmitted.emit(answer === this.task.answer);
+    this.task.isCompleted = true;
   }
 }

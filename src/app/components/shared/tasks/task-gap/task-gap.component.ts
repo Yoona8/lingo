@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Task } from '../../../../models/task.model';
 
 @Component({
@@ -7,12 +7,17 @@ import { Task } from '../../../../models/task.model';
   styleUrls: ['./task-gap.component.scss']
 })
 
-export class TaskGapComponent implements OnInit {
+export class TaskGapComponent implements OnInit, OnChanges {
   @Input() task: Task;
+  @Output() answerSubmitted = new EventEmitter<any>();
   private _question: string;
 
   ngOnInit(): void {
-    this.fillQuestion();
+    this.fillQuestion('');
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.fillQuestion('');
   }
 
   public get question() {
@@ -27,8 +32,11 @@ export class TaskGapComponent implements OnInit {
 
   public onTaskSubmit(evt) {
     evt.preventDefault();
-    const option = new FormData(evt.target).get('option');
-    this.fillQuestion(option);
-    console.log(this.task.question.replace('__', option.toString()) === this.task.answer);
+
+    const taskData = new FormData(evt.target);
+    const answer = this.task.question.replace('__', taskData.get('option').toString());
+
+    this.answerSubmitted.emit(answer.toLowerCase() === this.task.answer.toLowerCase());
+    this.task.isCompleted = true;
   }
 }

@@ -1,4 +1,7 @@
-<form class="card" (submit)="onTaskSubmit($event)">
+<form
+  class="card"
+  [ngClass]="{ 'card--completed': task.isCompleted }"
+  (submit)="onTaskSubmit($event)">
   <h2 class="title" lang="en">{{ task.question }}</h2>
   <ul class="pictures">
     <li class="picture" *ngFor="let option of task.options; index as i">
@@ -7,11 +10,13 @@
         [id]="'option-' + i"
         name="option"
         [value]="option[0]"
-        type="radio">
+        type="radio"
+        [disabled]="task.isCompleted"
+        required>
       <label class="option-image" [attr.for]="'option-' + i">
         <img [src]="'../assets/images/' + option[1]" [alt]="option[0]">
       </label>
     </li>
   </ul>
-  <button class="button" type="submit">Проверить</button>
+  <button *ngIf="!task.isCompleted" class="button" type="submit">Проверить</button>
 </form>
