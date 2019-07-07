@@ -153,12 +153,12 @@
   }
 
   &--notifications::before {
-    background-image: url('../../../assets/images/i-bell.svg');
+    background-image: url('~src/assets/images/i-bell.svg');
     background-size: 16px 16px;
   }
 
   &--messages::before {
-    background-image: url('../../../assets/images/i-message.svg');
+    background-image: url('~src/assets/images/i-message.svg');
     background-size: 14px 14px;
   }
 }

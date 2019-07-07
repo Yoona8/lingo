@@ -4,7 +4,7 @@
       <a class="author-image" href="#">
         <img
           width="40" height="40"
-          [src]="'../assets/images/' + lesson.authorPic"
+          [src]="'./assets/images/' + lesson.authorPic"
           [alt]="lesson.author">
       </a>
       <p class="author-info">
@@ -18,7 +18,7 @@
       <li>
         <a class="option option--bookmark" href="#">
           <svg class="option-icon" width="20" height="24">
-            <use xlink:href="../assets/images/sprite.svg#i-bookmark"></use>
+            <use xlink:href="./assets/images/sprite.svg#i-bookmark"></use>
           </svg>
           <span class="visually-hidden">В закладки</span>
         </a>
@@ -32,7 +32,7 @@
   </header>
   <div class="introduction">
     <p class="lesson-pic">
-      <img [src]="'../assets/images/' + lesson.pic" [alt]="lesson.title">
+      <img [src]="'./assets/images/' + lesson.pic" [alt]="lesson.title">
     </p>
     <div class="lesson-description">
       <div class="description-inner">
